@@ -1,0 +1,11 @@
+{
+	"name": "xmlpreview",
+	"title": "xmlpreview",
+	"version": "1.0.0",
+	"description": "XML view live preview ",
+	"homepage": "",
+	"icon": "",
+	"bundledPlugins": {
+		"xmllivepreview": "file:xmllivepreview"
+	}
+}

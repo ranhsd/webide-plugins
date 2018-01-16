@@ -1,0 +1,63 @@
+{
+	"name": "xmllivepreview",
+	"description": "XML view live preview ",
+	"i18n": "xmllivepreview/i18n/i18n",
+	"requires": {
+		"services": [
+			"perspective",
+			"command",
+			"commandGroup",
+			"selection"
+		]
+	},
+	"provides": {
+		"services": {
+			"livepreviewxml": {
+				"implements": "sap.watt.common.service.ui.Part",
+				"module": "xmllivepreview/service/LivePreview"
+			}
+		},
+
+		"interfaces": {
+
+		}
+	},
+	"configures": {
+		"services": {
+			"perspective:views": [{
+				"id": "livepreviewxml",
+				"service": "@livepreviewxml",
+				"cssclass": "xmllivepreview/css/main.css"
+			}],
+			"perspective:viewToAreaMapping": [{
+				"view": "livepreviewxml",
+				"perspective": "development",
+				"area": "right"
+			}],
+			"command:commands": [{
+				"id": "livepreviewstatecommand",
+				"label": "Toggle Live Preview",
+				"icon": "",
+				"service": {
+					"implements": "sap.watt.common.service.ide.AbstractUIPartToggler",
+					"module": "sap.watt.common.perspective/command/AbstractUIPartToggler",
+					"configuration": {
+						"id": "livepreviewstatecommand",
+						"service": "@livepreviewxml",
+						"perspective": "development"
+					}
+				},
+				"keyBinding": ""
+			}],
+
+			"commandGroup:items": [{
+				"parent": "view",
+				"command": "livepreviewstatecommand",
+				"prio": 101
+			}]
+		}
+	},
+	"subscribes": {
+
+	}
+}
