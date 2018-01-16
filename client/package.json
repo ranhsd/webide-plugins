@@ -2,10 +2,10 @@
 	"name": "xmlpreview",
 	"title": "xmlpreview",
 	"version": "1.0.0",
-	"description": "XML view live preview ",
+	"description": "Web IDE plugins",
 	"homepage": "",
 	"icon": "",
 	"bundledPlugins": {
-		"xmllivepreview": "file:xmllivepreview"
+		"trello_app": "file:trello_app"
 	}
 }
