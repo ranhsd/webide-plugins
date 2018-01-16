@@ -6,6 +6,7 @@
 	"homepage": "",
 	"icon": "",
 	"bundledPlugins": {
-		"trello_app": "file:trello_app"
+		"trello_app": "file:trello_app",
+		"slack": "file:slack"
 	}
 }
